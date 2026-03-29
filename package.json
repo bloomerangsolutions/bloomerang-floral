@@ -1,0 +1,10 @@
+{
+  "name": "bloomerang-floral",
+  "version": "1.0.0",
+  "description": "Bloomerang Floral — Sarasota florist website template",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site — no build needed'"
+  }
+}
