@@ -89,8 +89,18 @@
   .hero-img-cell:nth-child(3) { border-radius:4px 4px 4px 20px; }
   .hero-img-cell img { width:100%; height:100%; object-fit:cover; transition:transform 0.8s var(--ease); }
   .hero-img-cell:hover img { transform:scale(1.05); }
+  .hero-img-overlay { position:absolute; bottom:0; left:0; right:0; padding:16px 14px; background:linear-gradient(transparent, rgba(0,0,0,0.55)); display:flex; flex-direction:column; gap:4px; pointer-events:none; z-index:2; }
+  .hero-img-label { color:white; font-family:var(--serif); font-size:17px; font-weight:500; text-shadow:0 1px 4px rgba(0,0,0,0.3); }
+  .hero-img-cta { color:white; font-size:12px; font-weight:500; opacity:0.85; letter-spacing:0.03em; }
+  .hero-img-cell:hover .hero-img-overlay { background:linear-gradient(transparent, rgba(0,0,0,0.7)); }
+  .hero-img-cell:hover .hero-img-cta { opacity:1; }
   .hero-badge-overlay { position:absolute; bottom:20px; left:20px; z-index:3; display:flex; gap:8px; }
   .badge-pill { padding:8px 16px; border-radius:100px; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); font-size:12px; font-weight:500; color:var(--text); display:flex; align-items:center; gap:6px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+
+  /* MEGA MENU HELPERS */
+  .mega-section-wrapper { max-width:1280px; margin:0 auto; }
+  .mega-section-label { font-family:var(--sans); font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:12px; }
+  .mega-grid-4 { grid-template-columns:repeat(4,1fr); }
 
   /* OCCASIONS */
   .occasions { padding:64px 0; }
