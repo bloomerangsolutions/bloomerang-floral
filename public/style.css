@@ -346,6 +346,25 @@
   .footer-contact{margin-top:16px}.footer-contact p{font-size:13px;color:var(--text-on-dark-soft);margin:4px 0}.footer-contact a{color:var(--text-on-dark-soft);text-decoration:none;transition:color .2s}.footer-contact a:hover{color:var(--text-on-dark)}
   .footer-grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr}
   @media(max-width:1024px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
+  
+  /* ─── CONTENT AREA LINKS ─── */
+  .pdp-info a, .pdp-desc a, .pdp-care a, .pdp-occasions a,
+  .delivery-card a, .banner-content a,
+  .page-hero a, .occasion-hero a,
+  section p a:not(.btn):not(.filter-btn):not(.mega-item):not(.occasion-card):not(.product-card a):not(.nav-menu a):not(.footer-col a):not(.links-grid a):not(.logo) {
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:500;
+    border-bottom:1px solid rgba(123,47,160,0.2);
+    padding-bottom:1px;
+    transition:all 0.2s ease;
+  }
+  .pdp-info a:hover, .pdp-desc a:hover, .pdp-care a:hover,
+  section p a:not(.btn):not(.filter-btn):hover {
+    color:var(--accent-hover);
+    border-bottom-color:var(--accent);
+  }
+
   @media(max-width:768px){.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.pricing-grid-simple{grid-template-columns:1fr}.area-list{columns:1}.footer-grid{grid-template-columns:1fr 1fr}}
 
 /* ===== INLINE FORMS ===== */
