@@ -90,42 +90,68 @@
 .md-hero-badge {
   display:inline-flex;
   align-items:center;
-  gap:6px;
-  padding:10px 22px;
+  gap:8px;
+  padding:10px 24px;
   border-radius:100px;
-  background:var(--accent-soft);
-  font-family:var(--mono);
-  font-size:11px;
+  background:linear-gradient(135deg, rgba(123,47,160,0.08) 0%, rgba(123,47,160,0.15) 100%);
+  border:1px solid rgba(123,47,160,0.12);
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:500;
   color:var(--accent);
-  letter-spacing:0.04em;
+  letter-spacing:0.03em;
   backdrop-filter:blur(8px);
+  box-shadow:0 2px 8px rgba(123,47,160,0.06);
+  margin-bottom:8px;
 }
 .md-hero-actions {
   display:flex;
-  gap:12px;
+  gap:14px;
   justify-content:center;
-  margin-top:24px;
+  margin-top:28px;
 }
 .md-hero-actions a {
-  padding:14px 28px;
-  border-radius:100px;
+  padding:15px 32px;
+  border-radius:10px;
   font-family:var(--sans);
   font-size:14px;
   font-weight:500;
   text-decoration:none;
-  transition:all 0.3s var(--ease);
+  position:relative;
+  overflow:hidden;
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
+.md-hero-actions a::after {
+  content:''; position:absolute; inset:0; border-radius:inherit;
+  background:linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity:0; transition:opacity 0.3s;
+  pointer-events:none;
+}
+.md-hero-actions a:hover::after { opacity:1; }
+.md-hero-actions a:active { transform:translateY(1px) scale(0.98) !important; }
 .md-hero-actions .md-primary {
-  background:var(--accent);
+  background:linear-gradient(180deg, #8B3DAE 0%, var(--accent) 50%, var(--accent-hover) 100%);
   color:white;
+  text-shadow:0 1px 2px rgba(0,0,0,0.12);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset, 0 -1px 0 rgba(0,0,0,0.1) inset, 0 4px 14px rgba(123,47,160,0.25);
 }
-.md-hero-actions .md-primary:hover { background:var(--accent-hover); transform:translateY(-2px); }
+.md-hero-actions .md-primary:hover {
+  background:linear-gradient(180deg, #9B4DBE 0%, #8B3DAE 50%, var(--accent) 100%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 -1px 0 rgba(0,0,0,0.1) inset, 0 8px 28px rgba(123,47,160,0.35);
+  transform:translateY(-2px);
+}
 .md-hero-actions .md-secondary {
   background:transparent;
   color:var(--text);
-  border:1px solid var(--border-strong);
+  border:1.5px solid var(--border-strong);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 2px 6px rgba(0,0,0,0.04);
 }
-.md-hero-actions .md-secondary:hover { border-color:var(--accent); color:var(--accent); }
+.md-hero-actions .md-secondary:hover {
+  border-color:var(--accent); color:var(--accent);
+  background:var(--accent-soft);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 4px 16px rgba(123,47,160,0.1);
+  transform:translateY(-2px);
+}
 @media(max-width:768px) { .md-hero { padding:48px 0 40px; } .md-hero-actions { flex-direction:column; align-items:center; } }
 </style>
 <section class="md-hero">
@@ -293,7 +319,7 @@
   <div style="text-align:center;margin-top:60px;padding:48px 32px;background:var(--bg-dark);border-radius:var(--radius);color:var(--text-on-dark);">
     <h2 style="font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:12px;">Need something <em style="color:var(--accent)">custom for Mom?</em></h2>
     <p style="font-size:15px;opacity:0.6;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;">Tell us about your mom and we'll create a one-of-a-kind arrangement she'll never forget.</p>
-    <a href="tel:9418061911" style="display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:100px;font-family:var(--sans);font-size:14px;font-weight:500;text-decoration:none;">Call (941) 806-1911</a>
+    <a href="tel:9418061911" style="display:inline-block;padding:15px 32px;background:linear-gradient(180deg,#8B3DAE 0%,var(--accent) 50%,var(--accent-hover) 100%);color:white;border-radius:10px;font-family:var(--sans);font-size:14px;font-weight:500;text-decoration:none;text-shadow:0 1px 2px rgba(0,0,0,0.12);box-shadow:0 1px 0 rgba(255,255,255,0.15) inset,0 -1px 0 rgba(0,0,0,0.1) inset,0 4px 14px rgba(123,47,160,0.25);transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);">Call (941) 806-1911</a>
   </div>
 </div></section>
 
