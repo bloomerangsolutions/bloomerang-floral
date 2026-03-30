@@ -956,3 +956,74 @@ select.form-input { appearance: none; background-image: url("data:image/svg+xml,
   .venues-grid { grid-template-columns: 1fr; }
   .wedding-hero { min-height: 70vh; }
 }
+
+  /* ─── SEO CONTENT SECTIONS ─── */
+  .seo-content {
+    margin-top:48px;
+    padding:40px 36px;
+    border-radius:var(--radius);
+    background:linear-gradient(135deg, var(--bg-warm) 0%, rgba(123,47,160,0.03) 100%);
+    border:1px solid var(--border);
+    position:relative;
+    overflow:hidden;
+  }
+  .seo-content::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg, var(--accent), rgba(123,47,160,0.2), transparent);
+    border-radius:3px 3px 0 0;
+  }
+  .seo-content h2 {
+    font-family:var(--serif);
+    font-size:22px;
+    font-weight:500;
+    margin-bottom:16px;
+    color:var(--text);
+  }
+  .seo-content h3 {
+    font-family:var(--sans);
+    font-size:14px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--text-muted);
+    margin:20px 0 8px;
+  }
+  .seo-content p {
+    font-size:14.5px;
+    color:var(--text-soft);
+    line-height:1.85;
+    margin-bottom:14px;
+  }
+  .seo-content p:last-child { margin-bottom:0; }
+  .seo-content a {
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:500;
+    border-bottom:1px solid rgba(123,47,160,0.2);
+    padding-bottom:1px;
+    transition:all 0.2s ease;
+  }
+  .seo-content a:hover {
+    color:var(--accent-hover);
+    border-bottom-color:var(--accent);
+  }
+  .seo-delivery-areas {
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:12px;
+  }
+  .seo-delivery-areas span {
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:100px;
+    background:rgba(255,255,255,0.7);
+    border:1px solid var(--border);
+    font-size:12px;
+    color:var(--text-soft);
+    font-weight:400;
+  }
+  @media(max-width:768px) { .seo-content { padding:28px 24px; } }
