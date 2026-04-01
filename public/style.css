@@ -351,21 +351,8 @@
   .pdp-info a, .pdp-desc a, .pdp-care a, .pdp-occasions a,
   .delivery-card a, .banner-content a,
   .page-hero a, .occasion-hero a,
-  section p a:not(.btn):not(.filter-btn):not(.mega-item):not(.occasion-card):not(.product-card a):not(.nav-menu a):not(.footer-col a):not(.links-grid a):not(.logo) {
-    color:var(--accent);
-    text-decoration:none;
-    font-weight:500;
-    border-bottom:1px solid rgba(123,47,160,0.2);
-    padding-bottom:1px;
-    transition:all 0.2s ease;
-  }
-  .pdp-info a:hover, .pdp-desc a:hover, .pdp-care a:hover,
-  section p a:not(.btn):not(.filter-btn):hover {
-    color:var(--accent-hover);
-    border-bottom-color:var(--accent);
-  }
-
-  @media(max-width:768px){.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.pricing-grid-simple{grid-template-columns:1fr}.area-list{columns:1}.footer-grid{grid-template-columns:1fr 1fr}}
+  section p a:not(.pdp-info a:hover, .pdp-desc a:hover, .pdp-care a:hover,
+  section p a:not(@media(max-width:768px){.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.pricing-grid-simple{grid-template-columns:1fr}.area-list{columns:1}.footer-grid{grid-template-columns:1fr 1fr}}
 
 /* ===== INLINE FORMS ===== */
 .inline-form-section {
@@ -795,12 +782,7 @@ select.form-input { appearance: none; background-image: url("data:image/svg+xml,
   font-size: 12px;
 }
 
-.wedding-pkg .btn {
-  width: 100%;
-  text-align: center;
-  margin-top: 24px;
-  display: block;
-}
+.wedding-pkg 
 
 /* Wedding process */
 .wedding-process {
@@ -1047,10 +1029,33 @@ select.form-input { appearance: none; background-image: url("data:image/svg+xml,
   }
   @media(max-width:768px) { .seo-content { padding:28px 24px; } }
 
+
+/* Ensure filled buttons always have white text - never affected by link color rules */
+a.btn-fill, button.btn-fill, .btn-fill,
+a.btn-gold, button.btn-gold, .btn-gold {
+  color: white !important;
+  text-align: center;
+  justify-content: center;
+}
+a.btn-fill:hover, a.btn-gold:hover { color: white !important; }
+
+/* product-quick Call to Order button - white bg, purple text, centered */
+.product-quick button {
+  text-align: center;
+  justify-content: center;
+}
+
+/* add-to-cart button - white text, centered */
+.add-to-cart-btn {
+  color: white !important;
+  text-align: center;
+  justify-content: center;
+}
+
 /* ── Brand link colors ─────────────────────────────────────────── */
 /* Default links - brand purple, never browser blue */
-a { color: var(--accent, #7B2FA0); text-decoration: none; }
-a:hover { color: var(--accent-hover, #5a1f7a); }
+a:not(.btn):not(.btn-fill):not(.btn-outline):not(.btn-gold):not(.btn-white):not(.btn-ghost):not(.add-to-cart-btn):not(.view-cart-link):not(.nav-icon):not(.logo):not(.mega-item):not(.filter-btn) { color: var(--accent, #7B2FA0); text-decoration: none; }
+a:not(.btn):not(.btn-fill):not(.btn-gold):not(.btn-outline):hover { color: var(--accent-hover, #5a1f7a); }
 
 /* Footer links - lighter on dark background */
 footer a { color: #fff !important; font-weight: 700; }
