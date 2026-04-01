@@ -1,0 +1,573 @@
+{
+  "generated_at": "2026-04-01",
+  "supabase_url": "https://vuptitekudlxhdcigsyr.supabase.co",
+  "products": [
+    {
+      "slug": "alluring-elegance",
+      "name": "Alluring Elegance",
+      "price": 75.0,
+      "category": "arrangements",
+      "description": "White flower varieties elegantly designed in beveled glass, bringing about a vision of pure sophistication. An all-white arrangement that exudes luxury, pe",
+      "image_url": "https://www.bloomerangfloral.com/img/products/alluring-elegance.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "autumn-harvest",
+      "name": "Autumn Harvest",
+      "price": 68.0,
+      "category": "arrangements",
+      "description": "Burnt orange roses, burgundy dahlias, seasonal berries, and rich fall foliage. A warm, cozy arrangement that captures the essence of autumn. Features deep",
+      "image_url": "img/products/festive-fall-roses.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "dreaming-of-spring",
+      "name": "Dreaming of Spring",
+      "price": 125.0,
+      "category": "arrangements",
+      "description": "Are you dreaming of a bright spring day? This wonderful premium design features blooming roses, tulips, and seasonal flowers arranged to capture the spirit",
+      "image_url": "https://www.bloomerangfloral.com/img/products/dreaming-of-spring.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "elegant-blossoms",
+      "name": "Elegant Blossoms",
+      "price": 65.0,
+      "category": "arrangements",
+      "description": "We combined our freshest, most elegant blooms into a stunning bouquet with natural greenery. Then we added a touch of seasonal flair to create an arrangeme",
+      "image_url": "https://www.bloomerangfloral.com/img/products/elegant-blossoms.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "elegant-embrace",
+      "name": "Elegant Embrace",
+      "price": 85.0,
+      "category": "arrangements",
+      "description": "An alluring collection of luxurious favorites, featuring premium roses, lilies and seasonal accents. You'll quickly fall in love with this arrangement that",
+      "image_url": "https://www.bloomerangfloral.com/img/products/elegant-embrace.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "floral-fantasy",
+      "name": "Floral Fantasy",
+      "price": 165.0,
+      "category": "arrangements",
+      "description": "A gorgeous collection of roses, hydrangea, lilies, orchids, stock and vibrant seasonal blooms in a premium vase. This is our designer's showpiece - an expl",
+      "image_url": "https://www.bloomerangfloral.com/img/products/floral-fantasy.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "fruits-of-autumn",
+      "name": "Fruits of Autumn",
+      "price": 85.0,
+      "category": "arrangements",
+      "description": "Autumn is the season for luscious fruit. This delightful wicker basket includes seasonal flowers paired with gourmet fruits - perfect for autumn celebratio",
+      "image_url": "https://www.bloomerangfloral.com/img/products/fruits-of-autumn.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "garden-party",
+      "name": "Garden Party",
+      "price": 55.0,
+      "category": "arrangements",
+      "description": "A lush seasonal mix of garden blooms, fragrant herbs, and cascading greenery. This arrangement changes with the seasons - you'll always get the freshest, m",
+      "image_url": "https://www.bloomerangfloral.com/img/products/spring-forward.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "jolie-flowers",
+      "name": "Jolie Flowers",
+      "price": 225.0,
+      "category": "arrangements",
+      "description": "Send an abundance of love with this stunning work of art comprised of premium florals - our designer's masterpiece. Jolie Flowers is a lavish, oversized ar",
+      "image_url": "https://www.bloomerangfloral.com/img/products/jolie-flowers.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "lavender-dreams",
+      "name": "Lavender Dreams",
+      "price": 72.0,
+      "category": "arrangements",
+      "description": "Purple roses, lisianthus, and lavender stock elegantly arranged in a clear glass vase. A sophisticated and calming arrangement that's become one of our mos",
+      "image_url": "img/products/lavender-love.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "lavender-love",
+      "name": "Lavender Love",
+      "price": 65.0,
+      "category": "arrangements",
+      "description": "Lavender roses, Stargazer lilies and complementary seasonal blossoms make a stunning expression of love. The soft purple hues create a dreamy, romantic atm",
+      "image_url": "https://www.bloomerangfloral.com/img/products/lavender-love.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "love-is-grand",
+      "name": "Love is Grand",
+      "price": 265.0,
+      "category": "arrangements",
+      "description": "Expressing your feelings should always be this easy. Our most beautiful arrangement of premium roses and seasonal luxuries - a grand gesture of love design",
+      "image_url": "https://www.bloomerangfloral.com/img/products/love-is-grand.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "lucky-clover",
+      "name": "Lucky Clover",
+      "price": 45.0,
+      "category": "arrangements",
+      "description": "Send some luck with this charmingly beautiful design featuring Bells-of-Ireland, green hydrangeas and seasonal blooms. A unique arrangement with rich green",
+      "image_url": "https://www.bloomerangfloral.com/img/products/lucky-clover.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "moms-pink-garden",
+      "name": "Mom's Pink Garden",
+      "price": 79.0,
+      "category": "arrangements",
+      "description": "A lush garden of pink peonies, spray roses, ranunculus, and eucalyptus arranged in a blush ceramic vase. Soft, romantic, and utterly beautiful - just like",
+      "image_url": "https://www.bloomerangfloral.com/img/products/tender-touch.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "mothers-love-bouquet",
+      "name": "Mother's Love Bouquet",
+      "price": 65.0,
+      "category": "arrangements",
+      "description": "Pastel roses, white lilies, lavender stock, and baby's breath in a hand-tied bouquet wrapped in kraft paper with a satin ribbon. Classic, elegant, and time",
+      "image_url": "https://www.bloomerangfloral.com/img/products/orchid-succulent.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "pretty-in-pink",
+      "name": "Pretty in Pink",
+      "price": 75.0,
+      "category": "arrangements",
+      "description": "Welcome a special baby girl with this cube arrangement filled with hydrangeas, roses and seasonal pink blossoms. A sweet, cheerful design that celebrates n",
+      "image_url": "https://www.bloomerangfloral.com/img/products/pretty-in-pink.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "queen-for-a-day",
+      "name": "Queen for a Day",
+      "price": 125.0,
+      "category": "arrangements",
+      "description": "Our most luxurious Mother's Day arrangement. Two dozen premium roses in gradient pink tones, garden roses, peonies, and lush greenery in an oversized glass",
+      "image_url": "https://www.bloomerangfloral.com/img/products/jolie-flowers.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "simply-fragrant",
+      "name": "Simply Fragrant",
+      "price": 39.95,
+      "category": "arrangements",
+      "description": "A stunning vase of hydrangea and Stargazer lilies - simply beautiful and perfectly fragrant. This arrangement fills any room with an incredible natural per",
+      "image_url": "https://www.bloomerangfloral.com/img/products/simply-fragrant.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "simply-fragrant-deluxe",
+      "name": "Simply Fragrant - Deluxe",
+      "price": 55.0,
+      "category": "arrangements",
+      "description": "Our upgraded Simply Fragrant features a compact design of hydrangea, Stargazer lilies and premium roses in a clear cylinder vase with a decorative wire acc",
+      "image_url": "https://www.bloomerangfloral.com/img/products/simply-fragrant-upgrade.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "surrounded-by-love",
+      "name": "Surrounded by Love",
+      "price": 45.0,
+      "category": "arrangements",
+      "description": "Stand out from the crowd with this unique delight - a single red rose in a bubble vase, truly one of a kind. Simple, elegant, and romantic - sometimes the",
+      "image_url": "https://www.bloomerangfloral.com/img/products/surrounded-by-love.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "tranquility",
+      "name": "Tranquility",
+      "price": 125.0,
+      "category": "arrangements",
+      "description": "A mesmerizing abstract design featuring a single red rose under an umbrella of white elegance. This artistic arrangement is a study in contrast - passion m",
+      "image_url": "https://www.bloomerangfloral.com/img/products/tranquility.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "wildflower-meadow",
+      "name": "Wildflower Meadow",
+      "price": 58.0,
+      "category": "arrangements",
+      "description": "Free-form dried wildflowers and pampas grass in a woven basket. A boho-chic arrangement that lasts for months without water. Features dried lavender, bunny",
+      "image_url": "https://www.bloomerangfloral.com/img/products/elegant-blossoms.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "baby-blues",
+      "name": "Baby Blues",
+      "price": 75.0,
+      "category": "birthday",
+      "description": "The perfect arrangement for the new bundle of joy - hydrangeas, delphinium and seasonal accents in soft blues. A beautiful way to welcome a baby boy into t",
+      "image_url": "https://www.bloomerangfloral.com/img/products/baby-blues.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "balloon-bouquet",
+      "name": "Balloon Bouquet",
+      "price": 180.0,
+      "category": "birthday",
+      "description": "Add a special Mylar balloon to this delightful mix of pink roses, white stock, and seasonal blooms for any celebration. The combination of beautiful flower",
+      "image_url": "https://www.bloomerangfloral.com/img/products/balloon-bouquet.jpg",
+      "active": true,
+      "featured": true
+    },
+    {
+      "slug": "perfectly-pink",
+      "name": "Perfectly Pink",
+      "price": 55.0,
+      "category": "birthday",
+      "description": "A perfectly pink arrangement using roses, mini carnations, Gerbera daisies, and button chrysanthemums. This cheerful, all-pink design is a crowd-pleaser th",
+      "image_url": "https://www.bloomerangfloral.com/img/products/perfectly-pink.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "smiles-for-you",
+      "name": "Smiles For You",
+      "price": 60.0,
+      "category": "birthday",
+      "description": "A fun pastel design of pink roses, purple stock and green hydrangeas in a glass cylinder - guaranteed to bring smiles. Perfect for brightening someone's da",
+      "image_url": "https://www.bloomerangfloral.com/img/products/smiles-for-you.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "spring-forward",
+      "name": "Spring Forward",
+      "price": 50.0,
+      "category": "birthday",
+      "description": "Put a spring in your step with this delightful fresh bouquet featuring the season's most vibrant blooms. A cheerful mix of seasonal flowers in bright, happ",
+      "image_url": "https://www.bloomerangfloral.com/img/products/spring-forward.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "sunshine-joy",
+      "name": "Sunshine & Joy",
+      "price": 65.0,
+      "category": "birthday",
+      "description": "Bright sunflowers, golden dahlias, and spray roses arranged in a hand-painted ceramic vase. This cheerful arrangement radiates warmth and happiness - perfe",
+      "image_url": "img/products/smiles-for-you.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "double-azalea-basket",
+      "name": "Double Azalea Basket",
+      "price": 75.0,
+      "category": "gifts",
+      "description": "A beautiful wicker basket containing two stunning azalea plants in full bloom - perfect for any home or office. Azaleas bring vibrant color and can be repl",
+      "image_url": "https://www.bloomerangfloral.com/img/products/double-azalea-basket.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "dried-flowers",
+      "name": "Dried & Preserved Flowers",
+      "price": 65.0,
+      "category": "gifts",
+      "description": "Dried wildflowers, preserved roses, and pampas grass arrangements. Long-lasting beauty from Bloomerang Floral in Sarasota.",
+      "image_url": "https://www.bloomerangfloral.com/img/hero1.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "gourmet-gift-basket",
+      "name": "Gourmet Gift Basket",
+      "price": 89.0,
+      "category": "gifts",
+      "description": "Artisan chocolates, local Florida honey, imported cheese, gourmet crackers, and dried fruit arranged in a beautiful keepsake basket. A thoughtful gift for",
+      "image_url": "https://www.bloomerangfloral.com/img/gift1.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "hyacinth-tulip-garden",
+      "name": "Hyacinth & Tulip Bulb Garden",
+      "price": 45.0,
+      "category": "gifts",
+      "description": "Brighten someone's day with our delightful bulb garden featuring fragrant hyacinths and colorful tulips. This living garden continues to bloom and grow, pr",
+      "image_url": "https://www.bloomerangfloral.com/img/products/hyacinth-tulip-garden.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "spa-day",
+      "name": "Spa Day Collection",
+      "price": 72.0,
+      "category": "gifts",
+      "description": "Luxury bath bombs, hand-poured scented candles, organic herbal tea, and a fresh mini bouquet - all wrapped in a linen gift box. The ultimate self-care pack",
+      "image_url": "https://www.bloomerangfloral.com/img/gift2.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "orchid-succulent",
+      "name": "Contemporary Orchid & Succulent",
+      "price": 85.0,
+      "category": "plants",
+      "description": "A contemporary design featuring a bold orchid and sturdy succulent in the same arrangement - modern and unforgettable. This pairing of exotic orchid with s",
+      "image_url": "https://www.bloomerangfloral.com/img/products/orchid-succulent.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "fiddle-leaf-fig",
+      "name": "Fiddle Leaf Fig",
+      "price": 95.0,
+      "category": "plants",
+      "description": "A stunning fiddle leaf fig tree in a woven basket planter. The Instagram-famous houseplant that makes a bold statement in any room. Stands 2-3 feet tall an",
+      "image_url": "https://www.bloomerangfloral.com/img/products/orchid-amore.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "infinity-orchid",
+      "name": "Infinity Orchid",
+      "price": 95.0,
+      "category": "plants",
+      "description": "A contemporary masterpiece of alluring beauty and exotic elegance - sensational Phalaenopsis orchids in a modern vessel. This orchid makes a sophisticated",
+      "image_url": "https://www.bloomerangfloral.com/img/products/infinity-orchid.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "monstera",
+      "name": "Monstera Deliciosa",
+      "price": 65.0,
+      "category": "plants",
+      "description": "The iconic Swiss cheese plant in a mid-century modern ceramic pot. Known for its dramatic split leaves, the Monstera is one of the most popular and easy-to",
+      "image_url": "https://www.bloomerangfloral.com/img/products/orchid-bromeliad-combo.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "orchid-amore",
+      "name": "Orchid Amore",
+      "price": 65.0,
+      "category": "plants",
+      "description": "A beautiful, long-lasting orchid plant gift that keeps blooming for months. Give an orchid as a living gift - far outlasting cut flowers and bringing joy e",
+      "image_url": "https://www.bloomerangfloral.com/img/products/orchid-amore.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "orchid-bromeliad-combo",
+      "name": "Phalaenopsis & Bromeliad Combo",
+      "price": 95.0,
+      "category": "plants",
+      "description": "An elegant arrangement of a Phalaenopsis orchid nestled with a vibrant bromeliad - makes a lasting impression. This combination of exotic plants creates a",
+      "image_url": "https://www.bloomerangfloral.com/img/products/orchid-bromeliad-combo.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "succulent-garden",
+      "name": "Succulent Garden",
+      "price": 45.0,
+      "category": "plants",
+      "description": "A curated collection of succulents arranged in a modern concrete planter. Each garden features 5-7 varieties in complementary colors and textures. Nearly i",
+      "image_url": "https://www.bloomerangfloral.com/img/products/infinity-orchid.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "classic-dozen-roses",
+      "name": "Classic Dozen Roses",
+      "price": 79.0,
+      "category": "roses",
+      "description": "Twelve premium long-stem red roses hand-tied with eucalyptus greens and delivered in an elegant glass vase. Our signature arrangement - timeless, romantic,",
+      "image_url": "img/products/red-hot-romance.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "festive-fall-roses",
+      "name": "Festive Fall Roses",
+      "price": 80.0,
+      "category": "roses",
+      "description": "A beautiful fall-inspired design of roses in warm autumn tones - available in 12, 24, or 36 stems. Rich oranges, deep reds, and golden yellows capture the",
+      "image_url": "https://www.bloomerangfloral.com/img/products/festive-fall-roses.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "red-hot-romance",
+      "name": "Red Hot Romance",
+      "price": 75.0,
+      "category": "roses",
+      "description": "Vivid red roses, vibrant large white lilies, and fluffy white hydrangeas in a passionate arrangement. This bold combination of classic romance flowers make",
+      "image_url": "https://www.bloomerangfloral.com/img/products/red-hot-romance.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "stargazers-roses",
+      "name": "Stargazers & Roses",
+      "price": 85.0,
+      "category": "roses",
+      "description": "An exquisite floral design featuring our signature Stargazer lilies paired with premium long-stem roses. The intoxicating fragrance of Stargazers combined",
+      "image_url": "https://www.bloomerangfloral.com/img/products/stargazers-roses.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "eternal-grace",
+      "name": "Eternal Grace",
+      "price": 75.0,
+      "category": "sympathy",
+      "description": "An elegant tribute of premium white flowers and lush greenery, thoughtfully arranged to honor a life well lived. This classic sympathy arrangement speaks o",
+      "image_url": "https://www.bloomerangfloral.com/img/products/eternal-grace.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "gentle-comfort",
+      "name": "Gentle Comfort",
+      "price": 85.0,
+      "category": "sympathy",
+      "description": "Soft pastels and elegant white blooms convey your heartfelt condolences with grace and quiet beauty. A tender arrangement that offers solace and warmth whe",
+      "image_url": "https://www.bloomerangfloral.com/img/products/gentle-comfort.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "peaceful-lily",
+      "name": "Peaceful Lily",
+      "price": 75.0,
+      "category": "sympathy",
+      "description": "A serene peace lily plant in a decorative ceramic pot. One of the most popular sympathy gifts - the peace lily symbolizes peace, hope, and rebirth. Low-mai",
+      "image_url": "https://www.bloomerangfloral.com/img/products/double-azalea-basket.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "peaceful-memories",
+      "name": "Peaceful Memories",
+      "price": 95.0,
+      "category": "sympathy",
+      "description": "A serene arrangement of white lilies, roses, and soft greenery designed to express your deepest sympathy and care. This thoughtful tribute conveys comfort",
+      "image_url": "https://www.bloomerangfloral.com/img/products/peaceful-memories.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "purity-grace",
+      "name": "Purity & Grace",
+      "price": 85.0,
+      "category": "sympathy",
+      "description": "White roses, hydrangea, and ranunculus with silver dollar eucalyptus. An elegant all-white arrangement that conveys peace, grace, and beauty. Popular for s",
+      "image_url": "https://www.bloomerangfloral.com/img/products/alluring-elegance.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "serene-tribute",
+      "name": "Serene Tribute",
+      "price": 80.0,
+      "category": "sympathy",
+      "description": "Classic white and lavender blooms offering solace and remembrance during difficult times. The soft lavender accents add a gentle touch of color to this pea",
+      "image_url": "https://www.bloomerangfloral.com/img/products/serene-tribute.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "tender-touch",
+      "name": "Tender Touch",
+      "price": 95.0,
+      "category": "sympathy",
+      "description": "Soft watercolor blossoms hugging long tendrils of hydrangea, roses and tulips perched in a clear glass vase. A breathtaking arrangement that captures the g",
+      "image_url": "https://www.bloomerangfloral.com/img/products/tender-touch.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "mahalo",
+      "name": "Mahalo",
+      "price": 95.0,
+      "category": "tropical",
+      "description": "Let someone know you're thinking of them with our incredible Mahalo - a tropical-inspired arrangement bursting with color and island vibes. Say thank you w",
+      "image_url": "https://www.bloomerangfloral.com/img/products/mahalo.jpg",
+      "active": true,
+      "featured": false
+    },
+    {
+      "slug": "tropical-paradise",
+      "name": "Tropical Paradise",
+      "price": 130.0,
+      "category": "tropical",
+      "description": "Vibrant birds of paradise, anthuriums, and exotic tropical blooms that transport you to paradise. This bold tropical arrangement brings the warmth and dram",
+      "image_url": "https://www.bloomerangfloral.com/img/products/tropical-paradise.jpg",
+      "active": true,
+      "featured": true
+    }
+  ],
+  "categories": [
+    {
+      "slug": "arrangements",
+      "name": "Arrangements",
+      "count": 22
+    },
+    {
+      "slug": "roses",
+      "name": "Roses",
+      "count": 4
+    },
+    {
+      "slug": "birthday",
+      "name": "Birthday",
+      "count": 6
+    },
+    {
+      "slug": "sympathy",
+      "name": "Sympathy",
+      "count": 7
+    },
+    {
+      "slug": "plants",
+      "name": "Plants & Orchids",
+      "count": 7
+    },
+    {
+      "slug": "gifts",
+      "name": "Gifts & Baskets",
+      "count": 5
+    },
+    {
+      "slug": "tropical",
+      "name": "Tropical",
+      "count": 2
+    }
+  ]
+}
