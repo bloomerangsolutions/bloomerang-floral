@@ -634,12 +634,66 @@ V.deliveries = function(){
 };
 
 V.products = function(){
+  var mc = document.getElementById('mc');
+  mc.innerHTML = '<div style="padding:40px;text-align:center;color:#94A3B8">Loading products from Supabase...</div>';
+  var sb = window.supabaseClient;
+  if(!sb){
+    var s = window.supabase || (window.supabase = window.supabase);
+    try { sb = supabase.createClient(window.BLOOMY_SUPABASE_URL, window.BLOOMY_SUPABASE_ANON_KEY); window.supabaseClient=sb; } catch(e){}
+  }
+  if(sb){
+    sb.from('products').select('*,categories(name)').order('category').order('sort_order').then(function(res){
+      if(res.error || !res.data){ mc.innerHTML = _productsStatic(); return; }
+      var data = res.data;
+      var bycat = {};
+      data.forEach(function(p){ if(!bycat[p.category]) bycat[p.category]=[]; bycat[p.category].push(p); });
+      var cats = Object.keys(bycat).sort();
+      var catHtml = cats.map(function(c){
+        var label = bycat[c][0].categories ? bycat[c][0].categories.name : c;
+        return '<option value="'+c+'">'+label+' ('+bycat[c].length+')</option>';
+      }).join('');
+      var grid = data.map(function(p){
+        var mc2 = p.price>=100?'background:#E9FAF0;color:#16803C':p.price>=65?'background:#FEF9EC;color:#D97706':'background:#EDF3FF;color:#2563EB';
+        var margin = Math.round((p.price - p.price*0.28)/p.price*100);
+        var feat = p.featured?'<span style="background:#FEF9EC;color:#D97706;font-size:9px;font-weight:700;padding:1px 6px;border-radius:100px;margin-left:4px">Featured</span>':'';
+        return '<div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 3px 8px rgba(0,0,0,.04);overflow:hidden"><div style="height:90px;display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#FAF0FF,#F0E6FF)'+(p.image_url?';position:relative':'')+'">'+(p.image_url?'<img src="'+p.image_url+'" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" onerror="this.style.display='none'">':'')+'<span style="position:relative">'+getCatEmoji(p.category)+'</span></div><div style="padding:9px 11px"><div style="font-size:12px;font-weight:700;color:#18172C;margin-bottom:2px">'+p.name+feat+'</div><div style="font-size:10px;color:#94A3B8;margin-bottom:6px;text-transform:capitalize">'+p.category+'</div><div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;font-weight:800;color:#18172C;font-family:JetBrains Mono,monospace">$'+p.price.toFixed(2)+'</span><span style="'+mc2+';font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px">~'+margin+'% margin</span></div></div></div>';
+      }).join('');
+      var totalRevenue = data.reduce(function(s,p){return s+p.price;},0);
+      var avgPrice = (totalRevenue/data.length).toFixed(2);
+      var featured = data.filter(function(p){return p.featured;}).length;
+      mc.innerHTML = _h('Products','Art's Flowers product catalog - '+data.length+' active products across '+cats.length+' categories. Live from Supabase.')+
+        _sr([
+          [data.length,'Active products',cats.length+' categories',''],
+          ['$'+avgPrice,'Avg price','Across all products',''],
+          [featured,'Featured products','Shown on homepage',''],
+          ['0','Out of stock','All stems confirmed','']
+        ])+
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap"><select onchange="filterProductsCat(this.value)" style="padding:7px 12px;border:1px solid #E4E8F2;border-radius:8px;font-size:12px;outline:none;font-family:inherit;color:#18172C"><option value="">All categories</option>'+catHtml+'</select><span style="font-size:11px;color:#94A3B8">'+data.length+' products</span><span style="margin-left:auto;font-size:10px;color:#22C55E;font-weight:600">● Live from Supabase</span></div>'+
+        '<div id="prod-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">'+grid+'</div>';
+    });
+  } else {
+    mc.innerHTML = _productsStatic();
+  }
+  return '';
+};
+window.filterProductsCat = function(cat){
+  // re-render with filter
+  var btn = {value:cat};
+  V.products();
+};
+function getCatEmoji(cat){
+  var e={'arrangements':'💐','roses':'🌹','birthday':'🎂','sympathy':'🕊️','plants':'🪴','gifts':'🎁','tropical':'🌺','weddings':'💍'};
+  return e[cat]||'🌸';
+}
+function _productsStatic(){
   var prods=[{e:'🌹',n:"Garden Rose Centerpiece",c:'Arrangements',p:'$124',m:75},{e:'🌷',n:"Tulip Spring Mix",c:'Stems',p:'$64',m:71},{e:'🌸',n:"Sympathy Arrangement",c:'Sympathy',p:'$124',m:68},{e:'💐',n:"Rose Bouquet Deluxe",c:'Bouquets',p:'$89',m:74},{e:'🌻',n:"Sunflower Standout",c:'Arrangements',p:'$79',m:69},{e:'🌺',n:"Spring Mix Bouquet",c:'Bouquets',p:'$59',m:72},{e:'🌿',n:"Eucalyptus Greens",c:'Greens',p:'$34',m:78},{e:'🌷',n:"Peony Blush Arrangement",c:'Seasonal',p:'$149',m:64},{e:'🌹',n:"Valentine's Classic Dozen",c:'Seasonal',p:'$89',m:61},{e:'🌸',n:"Bridal Bouquet — Ivory",c:'Weddings',p:'$240',m:73},{e:'💐',n:"Corporate Weekly",c:'Corporate',p:'$180',m:76},{e:'🌺',n:"Anniversary Roses ×12",c:'Bouquets',p:'$89',m:72}];
   return _h('Products','Atlanta Blooms product catalog — 12 active · managed by Bloomy pricing and content agents.')+
   _sr([['12','Active products','Across 7 categories',''],['71.4%','Avg margin','Target: 65%',''],['2','Below margin target','Rose price spike Mar 31','#DC2626'],['0','Out of stock','All stems confirmed','']])+
   '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">'+
   prods.map(function(p){var mc=p.m>=70?'background:#E9FAF0;color:#16803C':p.m>=65?'background:#FEF9EC;color:#D97706':'background:#FEF2F2;color:#DC2626';return'<div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 3px 8px rgba(0,0,0,.04);overflow:hidden"><div style="height:90px;display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#FAF0FF,#F0E6FF)">'+p.e+'</div><div style="padding:9px 11px"><div style="font-size:12px;font-weight:700;color:#18172C;margin-bottom:2px">'+p.n+'</div><div style="font-size:10px;color:#94A3B8;margin-bottom:6px">'+p.c+'</div><div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;font-weight:800;color:#18172C;font-family:JetBrains Mono,monospace">'+p.p+'</span><span style="'+mc+';font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px">'+p.m+'% margin</span></div></div></div>';}).join('')+'</div>';
 };
+}
+
 
 V.inventory = function(){
   var items=[['Red roses','Stems',240,80,true],['Pink tulips','Stems',80,60,true],['White eucalyptus','Bunches',38,20,true],['Spray roses','Stems',90,40,true],["Baby's breath",'Bunches',24,30,false],['Garden roses (peach)','Stems',60,40,true],['Sunflowers','Stems',40,20,true],['Peonies','Stems',12,15,false],['Italian ruscus','Bunches',18,12,true],['Ranunculus','Stems',30,20,true],['Floral foam','Units',48,24,true],['Clear cylinders 8"','Units',22,12,true]];
@@ -678,5 +732,23 @@ V.settings = function(){return _h('Settings','Atlanta Blooms · Annual plan · B
 '</div></div></div>';};
 
 </script>
+
+<script>
+(function(){
+  function initSupabase(){
+    if(window.supabaseClient) return;
+    if(window.supabase && window.supabase.createClient){
+      window.supabaseClient = window.supabase.createClient(
+        window.BLOOMY_SUPABASE_URL,
+        window.BLOOMY_SUPABASE_ANON_KEY
+      );
+    }
+  }
+  // Try immediately and after scripts load
+  initSupabase();
+  window.addEventListener('load', initSupabase);
+})();
+</script>
+
 </body>
 </html>
