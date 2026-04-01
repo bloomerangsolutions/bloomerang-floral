@@ -205,7 +205,7 @@ canvas{position:absolute!important;top:10px;left:14px;width:calc(100% - 28px)!im
 .logout-btn:hover{background:rgba(0,0,0,.04)}
 </style>
 </head>
-<body>
+<body data-supa-url="https://vuptitekudlxhdcigsyr.supabase.co" data-supa-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1cHRpdGVrdWRseGhkY2lnc3lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNjA1MDYsImV4cCI6MjA5MDYzNjUwNn0.II6Rn4M3_j-OVGayMn_dHfjy2u7plVwnvy2A3nklcxM">
 <div class="shell">
 
 <!-- SIDEBAR -->
@@ -698,8 +698,27 @@ V.settings = function(){return _h('Settings','Atlanta Blooms · Annual plan · B
 '<div style="display:flex;justify-content:space-between;padding:7px 0;font-size:13px;font-weight:700;color:#18172C"><span>Est. total avg/mo</span><span style="font-family:JetBrains Mono,monospace">$2,192</span></div>'+
 '</div></div></div>';};
 
-</script>
 
+// Lazy-load Supabase after page init — non-blocking
+setTimeout(function(){
+  try {
+    window.SUPA_URL = document.body.dataset.supaUrl;
+    window.SUPA_KEY = document.body.dataset.supaKey;
+    window.supaFetch = function(path, opts){
+      return fetch(window.SUPA_URL+'/rest/v1/'+path, Object.assign({
+        headers:{
+          'apikey': window.SUPA_KEY,
+          'Authorization': 'Bearer '+window.SUPA_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=representation'
+        }
+      }, opts||{})).then(function(r){return r.json();});
+    };
+    window.SUPA_READY = true;
+  } catch(e) { /* Supabase unavailable - static fallback in use */ }
+}, 500);
+
+</script>
 
 </body>
 </html>

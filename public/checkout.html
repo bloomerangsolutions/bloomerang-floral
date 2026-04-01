@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Art's Flowers - Sarasota Florist</title>
+<meta name="description" content="Complete your flower order from Art's Flowers, Sarasota's premier florist. Same-day delivery available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.checkout-wrap{max-width:1080px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start}
+@media(max-width:768px){.checkout-wrap{grid-template-columns:1fr;padding:20px 16px}}
+.checkout-form{background:#fff;border-radius:16px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.checkout-form h2{font-size:22px;font-weight:800;color:#18172C;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #E4E8F2}
+.field-group{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:500px){.field-group{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:11px 14px;border:1.5px solid #E4E8F2;border-radius:10px;font-size:14px;font-family:inherit;color:#18172C;background:#FAFBFF;outline:none;transition:border-color .15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#4c0b7b;box-shadow:0 0 0 3px rgba(76,11,123,.06)}
+.field textarea{min-height:80px;resize:vertical}
+.section-title{font-size:14px;font-weight:800;color:#4c0b7b;text-transform:uppercase;letter-spacing:.06em;margin:24px 0 14px;padding-bottom:8px;border-bottom:2px solid #F2EAFA}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(140deg,#3d0963,#4c0b7b,#6B28A8);border:none;border-radius:12px;font-size:15px;font-weight:800;color:#fff;cursor:pointer;font-family:inherit;margin-top:8px;transition:opacity .15s}
+.submit-btn:hover{opacity:.9}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed}
+.order-summary{position:sticky;top:100px}
+.summary-card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:16px}
+.summary-card h3{font-size:16px;font-weight:800;color:#18172C;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #E4E8F2}
+.cart-line{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #F8F9FC;gap:12px}
+.cart-line:last-child{border-bottom:none}
+.cart-line-info{flex:1}
+.cart-line-name{font-size:13px;font-weight:600;color:#18172C}
+.cart-line-qty{font-size:11px;color:#94A3B8;margin-top:2px}
+.cart-line-price{font-size:13px;font-weight:700;color:#18172C;white-space:nowrap}
+.qty-ctrl{display:flex;align-items:center;gap:8px;margin-top:6px}
+.qty-btn{width:24px;height:24px;border-radius:6px;border:1px solid #E4E8F2;background:#F8F9FC;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;color:#18172C}
+.qty-btn:hover{background:#F2EAFA;border-color:rgba(76,11,123,.2)}
+.qty-num{font-size:13px;font-weight:600;min-width:20px;text-align:center}
+.remove-btn{font-size:11px;color:#94A3B8;cursor:pointer;text-decoration:none;background:none;border:none;padding:0;font-family:inherit}
+.remove-btn:hover{color:#DC2626}
+.totals{margin-top:14px;padding-top:14px;border-top:1px solid #E4E8F2}
+.total-row{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px;color:#64748B}
+.total-row.grand{font-size:16px;font-weight:800;color:#18172C;margin-top:10px;padding-top:10px;border-top:1px solid #E4E8F2}
+.empty-cart{text-align:center;padding:40px 20px;color:#94A3B8}
+.empty-cart a{color:#4c0b7b;font-weight:700;text-decoration:none}
+.trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.badge{background:#F2EAFA;border-radius:10px;padding:12px;text-align:center;font-size:11px;color:#4c0b7b;font-weight:600}
+.badge div{font-size:18px;margin-bottom:4px}
+.success-screen{display:none;text-align:center;padding:60px 32px}
+.success-screen .check{width:64px;height:64px;background:#E9FAF0;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px}
+.success-screen h2{font-size:24px;font-weight:800;color:#18172C;margin-bottom:8px}
+.success-screen p{color:#64748B;font-size:15px;line-height:1.6}
+.order-num{background:#F2EAFA;border-radius:10px;padding:14px 20px;margin:20px auto;display:inline-block;font-family:JetBrains Mono,monospace;font-size:18px;font-weight:700;color:#4c0b7b}
+.err-msg{background:#FEF2F2;border:1px solid #FECACA;border-radius:9px;padding:12px 16px;font-size:13px;color:#DC2626;margin-bottom:14px;display:none}
+.err-msg.show{display:block}
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div style="padding:20px 20px 0;max-width:1080px;margin:0 auto">
+  <a href="/shop" style="color:#4c0b7b;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="#4c0b7b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Continue shopping
+  </a>
+</div>
+
+<div class="checkout-wrap">
+
+  <!-- LEFT: Form -->
+  <div class="checkout-form">
+    <div id="form-screen">
+      <h2>Complete your order</h2>
+      <div class="err-msg" id="err-msg"></div>
+
+      <div class="section-title">Contact information</div>
+      <div class="field-group">
+        <div class="field">
+          <label>First name *</label>
+          <input type="text" id="first-name" placeholder="Sarah" required>
+        </div>
+        <div class="field">
+          <label>Last name *</label>
+          <input type="text" id="last-name" placeholder="Mitchell" required>
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label>Phone *</label>
+          <input type="tel" id="phone" placeholder="(941) 555-0100" required>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="sarah@email.com">
+        </div>
+      </div>
+
+      <div class="section-title">Delivery details</div>
+      <div class="field">
+        <label>Delivery address *</label>
+        <input type="text" id="address" placeholder="1234 Main St, Sarasota FL 34236" required>
+      </div>
+      <div class="field-group">
+        <div class="field">
+          <label>Delivery date *</label>
+          <input type="date" id="delivery-date" required>
+        </div>
+        <div class="field">
+          <label>Preferred time</label>
+          <select id="delivery-time">
+            <option value="">Any time</option>
+            <option value="Morning (9am-12pm)">Morning (9am-12pm)</option>
+            <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+            <option value="Evening (5pm-7pm)">Evening (5pm-7pm)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="section-title">Card &amp; gift message</div>
+      <div class="field-group">
+        <div class="field">
+          <label>Occasion</label>
+          <select id="occasion">
+            <option value="">Select occasion</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Just Because">Just Because</option>
+            <option value="Sympathy">Sympathy</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Get Well">Get Well</option>
+            <option value="Congratulations">Congratulations</option>
+            <option value="Thank You">Thank You</option>
+            <option value="Corporate">Corporate</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Recipient name</label>
+          <input type="text" id="recipient" placeholder="Who is this for?">
+        </div>
+      </div>
+      <div class="field">
+        <label>Card message (we will hand-write this)</label>
+        <textarea id="card-message" placeholder="With love and thinking of you..."></textarea>
+      </div>
+      <div class="field">
+        <label>Special instructions</label>
+        <textarea id="special-instructions" placeholder="Gate code, call upon arrival, leave at door..."></textarea>
+      </div>
+
+      <div class="section-title">Payment</div>
+      <div style="background:#F2EAFA;border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#4c0b7b;display:flex;align-items:center;gap:10px">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1.5" y="4.5" width="15" height="10" rx="1.5" stroke="#4c0b7b" stroke-width="1.5"/><path d="M1.5 7.5h15" stroke="#4c0b7b" stroke-width="1.5"/><rect x="3.5" y="10" width="3" height="1.5" rx=".75" fill="#4c0b7b"/></svg>
+        <div><strong>Pay on delivery.</strong> Our driver will collect payment when your flowers arrive. We accept cash or card.</div>
+      </div>
+
+      <button class="submit-btn" id="place-order-btn" onclick="placeOrder()">
+        Place order →
+      </button>
+    </div>
+
+    <div class="success-screen" id="success-screen">
+      <div class="check">✓</div>
+      <h2>Order placed!</h2>
+      <p>Thank you for your order. We will confirm by phone or text shortly.</p>
+      <div class="order-num" id="order-num">#---</div>
+      <p style="font-size:13px;margin-top:8px">We will call <span id="confirm-phone"></span> to confirm your order and delivery time.</p>
+      <a href="/shop" style="display:inline-block;margin-top:24px;padding:12px 28px;background:#4c0b7b;color:#fff;border-radius:10px;font-weight:700;text-decoration:none;font-size:14px">Continue shopping</a>
+    </div>
+  </div>
+
+  <!-- RIGHT: Order summary -->
+  <div class="order-summary">
+    <div class="summary-card">
+      <h3>Your order</h3>
+      <div id="cart-lines">
+        <div class="empty-cart">
+          Your cart is empty.<br><a href="/shop">Browse flowers →</a>
+        </div>
+      </div>
+      <div class="totals" id="cart-totals" style="display:none">
+        <div class="total-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+        <div class="total-row"><span>Delivery fee</span><span id="summary-delivery">$15.00</span></div>
+        <div class="total-row grand"><span>Total</span><span id="summary-total">$0.00</span></div>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="trust-badges">
+        <div class="badge"><div>🌸</div>Fresh daily</div>
+        <div class="badge"><div>🚚</div>Same-day delivery</div>
+        <div class="badge"><div>✍️</div>Hand-written card</div>
+        <div class="badge"><div>📞</div>We call to confirm</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="cart.js"></script>
+<script>
+// Load nav
+fetch('/index.html').then(function(r){return r.text();}).then(function(html){
+  var nav = html.match(/<header[^>]*>([\s\S]*?)<\/header>/i);
+  if(nav) document.getElementById('header-placeholder').innerHTML = nav[0];
+  var footer = html.match(/<footer[^>]*>([\s\S]*?)<\/footer>/i);
+  if(footer) document.getElementById('footer-placeholder').innerHTML = footer[0];
+  Cart.updateBadge();
+}).catch(function(){});
+
+// Set min date to today
+var today = new Date();
+document.getElementById('delivery-date').min = today.toISOString().split('T')[0];
+// Default to tomorrow
+var tomorrow = new Date(today);
+tomorrow.setDate(today.getDate()+1);
+document.getElementById('delivery-date').value = tomorrow.toISOString().split('T')[0];
+
+// Render cart
+function renderCart(){
+  var items = Cart.get();
+  var linesEl = document.getElementById('cart-lines');
+  var totalsEl = document.getElementById('cart-totals');
+
+  if(!items.length){
+    linesEl.innerHTML = '<div class="empty-cart">Your cart is empty.<br><a href="/shop">Browse flowers →</a></div>';
+    totalsEl.style.display = 'none';
+    document.getElementById('place-order-btn').disabled = true;
+    return;
+  }
+
+  document.getElementById('place-order-btn').disabled = false;
+  linesEl.innerHTML = items.map(function(item){
+    return '<div class="cart-line" id="line-'+item.slug+'">'+
+      '<div class="cart-line-info">'+
+        '<div class="cart-line-name">'+item.name+'</div>'+
+        '<div class="qty-ctrl">'+
+          '<button class="qty-btn" onclick="changeQty(\''+item.slug+'\',-1)">−</button>'+
+          '<span class="qty-num">'+item.qty+'</span>'+
+          '<button class="qty-btn" onclick="changeQty(\''+item.slug+'\',1)">+</button>'+
+          '<button class="remove-btn" onclick="Cart.remove(\''+item.slug+'\')">Remove</button>'+
+        '</div>'+
+      '</div>'+
+      '<div class="cart-line-price">$'+(item.price*item.qty).toFixed(2)+'</div>'+
+    '</div>';
+  }).join('');
+
+  var subtotal = Cart.subtotal();
+  var delivery = subtotal >= 100 ? 0 : 15;
+  var total = subtotal + delivery;
+
+  document.getElementById('summary-subtotal').textContent = '$'+subtotal.toFixed(2);
+  document.getElementById('summary-delivery').textContent = delivery === 0 ? 'FREE' : '$'+delivery.toFixed(2);
+  document.getElementById('summary-total').textContent = '$'+total.toFixed(2);
+  totalsEl.style.display = 'block';
+}
+
+function changeQty(slug, delta){
+  var items = Cart.get();
+  var item = items.find(function(i){return i.slug===slug;});
+  if(item) Cart.updateQty(slug, item.qty + delta);
+}
+
+window.addEventListener('cart:updated', renderCart);
+renderCart();
+
+// Place order
+function placeOrder(){
+  var btn = document.getElementById('place-order-btn');
+  var err = document.getElementById('err-msg');
+  err.classList.remove('show');
+
+  var firstName = document.getElementById('first-name').value.trim();
+  var lastName = document.getElementById('last-name').value.trim();
+  var phone = document.getElementById('phone').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var address = document.getElementById('address').value.trim();
+  var delivDate = document.getElementById('delivery-date').value;
+  var delivTime = document.getElementById('delivery-time').value;
+  var occasion = document.getElementById('occasion').value;
+  var cardMsg = document.getElementById('card-message').value.trim();
+  var specialInst = document.getElementById('special-instructions').value.trim();
+
+  if(!firstName||!lastName){err.textContent='Please enter your name.';err.classList.add('show');return;}
+  if(!phone){err.textContent='Please enter your phone number.';err.classList.add('show');return;}
+  if(!address){err.textContent='Please enter a delivery address.';err.classList.add('show');return;}
+  if(!delivDate){err.textContent='Please select a delivery date.';err.classList.add('show');return;}
+
+  var items = Cart.get();
+  if(!items.length){err.textContent='Your cart is empty.';err.classList.add('show');return;}
+
+  var subtotal = Cart.subtotal();
+  var delivery = subtotal >= 100 ? 0 : 15;
+  var total = subtotal + delivery;
+
+  btn.disabled = true;
+  btn.textContent = 'Placing order...';
+
+  fetch('https://vuptitekudlxhdcigsyr.supabase.co/functions/v1/create-order', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      customer_name: firstName+' '+lastName,
+      customer_email: email || null,
+      customer_phone: phone,
+      delivery_address: address,
+      delivery_date: delivDate,
+      delivery_time: delivTime || null,
+      items: items,
+      subtotal: subtotal,
+      delivery_fee: delivery,
+      total: total,
+      occasion: occasion || null,
+      card_message: cardMsg || null,
+      special_instructions: specialInst || null,
+      type: 'delivery'
+    })
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    if(data.error){
+      err.textContent = data.error;
+      err.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Place order →';
+    } else {
+      Cart.clear();
+      document.getElementById('form-screen').style.display = 'none';
+      document.getElementById('success-screen').style.display = 'block';
+      document.getElementById('order-num').textContent = '#'+String(data.order_number).padStart(4,'0');
+      document.getElementById('confirm-phone').textContent = phone;
+    }
+  })
+  .catch(function(e){
+    err.textContent = 'Something went wrong. Please call us at (941) 365-0600.';
+    err.classList.add('show');
+    btn.disabled = false;
+    btn.textContent = 'Place order →';
+  });
+}
+</script>
+</body>
+</html>

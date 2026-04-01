@@ -32,6 +32,13 @@
 }</script>
 <style>
 .pdp-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.pdp-image{border-radius:var(--radius);overflow:hidden;position:relative}.pdp-image img{width:100%;display:block}.pdp-info{padding-top:16px}.pdp-category{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}.pdp-category a{color:var(--accent);text-decoration:none}.pdp-title{font-family:var(--serif);font-size:clamp(28px,3vw,40px);font-weight:400;margin-bottom:8px}.pdp-price{font-family:var(--serif);font-size:32px;font-weight:500;margin-bottom:16px}.pdp-price .from{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--text-muted)}.pdp-delivery-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:var(--green-soft);font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:20px}.pdp-desc{font-size:15px;font-weight:300;line-height:1.75;color:var(--text-soft);margin-bottom:24px}.pdp-actions{display:flex;gap:12px;margin-bottom:32px}.pdp-care{padding:24px;border-radius:var(--radius-sm);background:var(--bg-warm);border:1px solid var(--border);margin-bottom:24px}.pdp-care h3{font-size:14px;font-weight:500;margin-bottom:8px}.pdp-care p{font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.6;margin:0}.pdp-occasions{margin-bottom:24px}.pdp-occasions h3{font-size:14px;font-weight:500;margin-bottom:10px}.pdp-occasions .filter-btn{font-size:12px;padding:6px 14px}@media(max-width:768px){.pdp-grid{grid-template-columns:1fr}}
+
+<style>
+.cart-count{background:#4c0b7b;color:#fff;font-size:9px;font-weight:800;padding:1px 5px;border-radius:100px;margin-left:-6px;margin-top:-8px;display:none;min-width:16px;text-align:center;vertical-align:top}
+.add-to-cart-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(140deg,#3d0963,#4c0b7b,#6B28A8);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;transition:opacity .15s;width:100%}
+.add-to-cart-btn:hover{opacity:.9}
+.view-cart-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border:2px solid #4c0b7b;color:#4c0b7b;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;transition:all .15s;width:100%;margin-top:10px}
+.view-cart-link:hover{background:#F2EAFA}
 </style>
 </head>
 <body>
@@ -122,5 +129,6 @@
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<script src="/cart.js"></script>
 </body>
 </html>
