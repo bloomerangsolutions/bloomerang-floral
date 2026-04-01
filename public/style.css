@@ -1098,3 +1098,17 @@ nav a { text-decoration: none; }
   color: rgba(255,255,255,.85);
 }
 .dark-section a:hover { color: #fff; }
+
+/* ─── FULL-CARD CLICKABILITY ─── */
+/* Stretch the product-name link to cover the entire card */
+.product-card { position: relative; }
+.product-name a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+/* Keep quick-view button and badge above the stretched link */
+.product-quick { z-index: 3; }
+.product-badge { z-index: 3; }
+.product-img a { position: relative; z-index: 2; }
