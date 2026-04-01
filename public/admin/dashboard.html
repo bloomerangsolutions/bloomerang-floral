@@ -204,6 +204,32 @@ canvas{position:absolute!important;top:10px;left:14px;width:calc(100% - 28px)!im
 .logout-btn{display:flex;align-items:center;gap:4px;padding:5px 10px;background:transparent;border:1px solid var(--bd);border-radius:7px;font-size:10px;font-weight:600;color:var(--t2);cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background .1s}
 .logout-btn:hover{background:rgba(0,0,0,.04)}
 </style>
+
+<style>
+/* Link color overrides - match brand purple, never browser blue */
+a { color: #4c0b7b; text-decoration: none; }
+a:hover { color: #7B2FBE; }
+/* On dark/colored backgrounds (banners, purple bg) links should be white/light */
+.banner a, [style*="background:#4c0b7b"] a, [style*="background:linear-gradient"] a { color: rgba(255,255,255,.9) !important; }
+[style*="background:#F2EAFA"] a, [style*="background:var(--prl)"] a { color: #4c0b7b !important; }
+/* Table and card links */
+.tbl a, .card a, .feed-item a { color: #4c0b7b; font-weight: 600; }
+.tbl a:hover, .card a:hover { color: #7B2FBE; text-decoration: underline; }
+/* Status pills - keep their own colors */
+.st a { color: inherit !important; }
+.prod-thumb { transition: transform .15s; }
+.prod-thumb:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.1) !important; }
+</style>
+<style>
+/* Brand link colors - never browser blue */
+a { color: #4c0b7b; }
+a:hover { color: #7B2FBE; }
+.banner a, .banner-btn { color: #fff !important; }
+footer a { color: rgba(255,255,255,.8) !important; }
+footer a:hover { color: #fff !important; }
+.prod-thumb { transition: transform .15s; }
+.prod-thumb:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.12) !important; }
+</style>
 </head>
 <body data-supa-url="https://vuptitekudlxhdcigsyr.supabase.co" data-supa-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ1cHRpdGVrdWRseGhkY2lnc3lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNjA1MDYsImV4cCI6MjA5MDYzNjUwNn0.II6Rn4M3_j-OVGayMn_dHfjy2u7plVwnvy2A3nklcxM">
 <div class="shell">
@@ -629,18 +655,18 @@ V.deliveries = function(){
 
 V.products = function(){
   var prods=[
-    {e:'🌹',n:'Tender Touch',c:'Sympathy',p:'$95',m:71,slug:'tender-touch'},
-    {e:'🌸',n:'Dreaming of Spring',c:'Arrangements',p:'$125',m:74,slug:'dreaming-of-spring'},
-    {e:'💐',n:'Floral Fantasy',c:'Arrangements',p:'$165',m:72,slug:'floral-fantasy'},
-    {e:'🌺',n:'Red Hot Romance',c:'Roses',p:'$75',m:73,slug:'red-hot-romance'},
-    {e:'🌷',n:'Lavender Love',c:'Arrangements',p:'$65',m:70,slug:'lavender-love'},
-    {e:'🌹',n:'Love is Grand',c:'Arrangements',p:'$265',m:68,slug:'love-is-grand'},
-    {e:'💐',n:'Jolie Flowers',c:'Arrangements',p:'$225',m:70,slug:'jolie-flowers'},
-    {e:'🌸',n:'Simply Fragrant',c:'Arrangements',p:'$39.95',m:75,slug:'simply-fragrant'},
-    {e:'🪴',n:'Infinity Orchid',c:'Plants',p:'$95',m:72,slug:'infinity-orchid'},
-    {e:'🌻',n:'Balloon Bouquet',c:'Birthday',p:'$180',m:65,slug:'balloon-bouquet'},
-    {e:'🌿',n:'Peaceful Memories',c:'Sympathy',p:'$95',m:69,slug:'peaceful-memories'},
-    {e:'🌺',n:'Tropical Paradise',c:'Tropical',p:'$130',m:71,slug:'tropical-paradise'}
+    {n:'Tender Touch',c:'Sympathy',p:'$95',m:71,img:'/img/products/tender-touch.jpg',slug:'tender-touch'},
+    {n:'Dreaming of Spring',c:'Arrangements',p:'$125',m:74,img:'/img/products/dreaming-of-spring.jpg',slug:'dreaming-of-spring'},
+    {n:'Floral Fantasy',c:'Arrangements',p:'$165',m:72,img:'/img/products/floral-fantasy.jpg',slug:'floral-fantasy'},
+    {n:'Red Hot Romance',c:'Roses',p:'$75',m:73,img:'/img/products/red-hot-romance.jpg',slug:'red-hot-romance'},
+    {n:'Lavender Love',c:'Arrangements',p:'$65',m:70,img:'/img/products/lavender-love.jpg',slug:'lavender-love'},
+    {n:'Love is Grand',c:'Arrangements',p:'$265',m:68,img:'/img/products/love-is-grand.jpg',slug:'love-is-grand'},
+    {n:'Jolie Flowers',c:'Arrangements',p:'$225',m:70,img:'/img/products/jolie-flowers.jpg',slug:'jolie-flowers'},
+    {n:'Simply Fragrant',c:'Arrangements',p:'$39.95',m:75,img:'/img/products/simply-fragrant.jpg',slug:'simply-fragrant'},
+    {n:'Infinity Orchid',c:'Plants',p:'$95',m:72,img:'/img/products/infinity-orchid.jpg',slug:'infinity-orchid'},
+    {n:'Balloon Bouquet',c:'Birthday',p:'$180',m:65,img:'/img/products/balloon-bouquet.jpg',slug:'balloon-bouquet'},
+    {n:'Peaceful Memories',c:'Sympathy',p:'$95',m:69,img:'/img/products/peaceful-memories.jpg',slug:'peaceful-memories'},
+    {n:'Tropical Paradise',c:'Tropical',p:'$130',m:71,img:'/img/products/tropical-paradise.jpg',slug:'tropical-paradise'}
   ];
   return _h('Products','Atlanta Blooms catalog - 53 live products in Supabase. Showing featured items.')+
   _sr([
@@ -657,22 +683,26 @@ V.products = function(){
   '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">'+
   prods.map(function(p){
     var mc = p.m>=70 ? 'background:#E9FAF0;color:#16803C' : p.m>=65 ? 'background:#FEF9EC;color:#D97706' : 'background:#FEF2F2;color:#DC2626';
-    return '<div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 3px 8px rgba(0,0,0,.04);overflow:hidden">'+
-      '<div style="height:90px;display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#FAF0FF,#F0E6FF)">'+p.e+'</div>'+
-      '<div style="padding:9px 11px">'+
-        '<div style="font-size:12px;font-weight:700;color:#18172C;margin-bottom:2px">'+p.n+'</div>'+
-        '<div style="font-size:10px;color:#94A3B8;margin-bottom:6px">'+p.c+'</div>'+
-        '<div style="display:flex;align-items:center;justify-content:space-between">'+
-          '<span style="font-size:14px;font-weight:800;color:#18172C;font-family:JetBrains Mono,monospace">'+p.p+'</span>'+
-          '<span style="'+mc+';font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px">'+p.m+'% margin</span>'+
+    return '<a href="/'+p.slug+'" target="_blank" style="text-decoration:none">'+
+      '<div style="background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 3px 8px rgba(0,0,0,.04);overflow:hidden;transition:transform .15s;cursor:pointer" class="prod-thumb">'+
+        '<div style="height:140px;overflow:hidden;position:relative">'+
+          '<img src="'+p.img+'" alt="'+p.n+'" style="width:100%;height:100%;object-fit:cover" loading="lazy">'+
+        '</div>'+
+        '<div style="padding:10px 12px">'+
+          '<div style="font-size:12px;font-weight:700;color:#18172C;margin-bottom:2px">'+p.n+'</div>'+
+          '<div style="font-size:10px;color:#94A3B8;margin-bottom:7px">'+p.c+'</div>'+
+          '<div style="display:flex;align-items:center;justify-content:space-between">'+
+            '<span style="font-size:14px;font-weight:800;color:#18172C;font-family:JetBrains Mono,monospace">'+p.p+'</span>'+
+            '<span style="'+mc+';font-size:10px;font-weight:700;padding:2px 7px;border-radius:100px">'+p.m+'% margin</span>'+
+          '</div>'+
         '</div>'+
       '</div>'+
-    '</div>';
+    '</a>';
   }).join('')+
   '</div>'+
   '<div style="background:#F2EAFA;border-radius:10px;padding:12px 16px;font-size:12px;color:#4c0b7b;display:flex;align-items:center;gap:8px">'+
     '<svg viewBox="0 0 16 16" fill="none" width="14" height="14"><circle cx="8" cy="8" r="6" stroke="#4c0b7b" stroke-width="1.4"/><path d="M8 5v4M8 11v.5" stroke="#4c0b7b" stroke-width="1.4" stroke-linecap="round"/></svg>'+
-    'All 53 products are live in Supabase. View the full catalog at <a href="/shop" target="_blank" style="color:#4c0b7b;font-weight:700">/shop</a> or manage at <a href="https://supabase.com/dashboard/project/vuptitekudlxhdcigsyr/editor" target="_blank" style="color:#4c0b7b;font-weight:700">Supabase dashboard</a>.'+
+    'All 53 products live in Supabase. <a href="/shop" target="_blank" style="color:#4c0b7b;font-weight:700;text-decoration:none">View store →</a> &nbsp;·&nbsp; <a href="https://supabase.com/dashboard/project/vuptitekudlxhdcigsyr/editor" target="_blank" style="color:#4c0b7b;font-weight:700;text-decoration:none">Manage in Supabase →</a>'+
   '</div>';
 }
 

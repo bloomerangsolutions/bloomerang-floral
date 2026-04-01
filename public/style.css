@@ -1046,3 +1046,37 @@ select.form-input { appearance: none; background-image: url("data:image/svg+xml,
     font-weight:400;
   }
   @media(max-width:768px) { .seo-content { padding:28px 24px; } }
+
+/* ── Brand link colors ─────────────────────────────────────────── */
+/* Default links - brand purple, never browser blue */
+a { color: var(--accent, #7B2FA0); text-decoration: none; }
+a:hover { color: var(--accent-hover, #5a1f7a); text-decoration: underline; }
+
+/* Footer links - lighter on dark background */
+footer a { color: rgba(255,255,255,.75); }
+footer a:hover { color: #fff; text-decoration: none; }
+
+/* Announcement bar links */
+.announcement a { color: inherit; opacity: .9; }
+
+/* Nav links - handled by existing nav styles */
+nav a { text-decoration: none; }
+
+/* Content body links - purple with underline for readability */
+.pdp-info a, .pdp-care a, .seo-content a, p a, .footer-col a {
+  color: var(--accent, #7B2FA0);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(123,47,160,.25);
+  transition: border-color .15s, color .15s;
+}
+.pdp-info a:hover, .pdp-care a:hover, .seo-content a:hover, p a:hover, .footer-col a:hover {
+  color: var(--accent-hover, #5a1f7a);
+  border-bottom-color: var(--accent, #7B2FA0);
+  text-decoration: none;
+}
+
+/* Dark section links - white */
+.dark-section a, [style*="background:var(--bg-dark)"] a, [style*="background:#1a"] a {
+  color: rgba(255,255,255,.85);
+}
+.dark-section a:hover { color: #fff; }
