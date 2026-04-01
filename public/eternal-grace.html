@@ -43,6 +43,13 @@
   .pdp-occasions h3 { font-size:14px; font-weight:500; margin-bottom:10px; }
   .pdp-occasions .filter-btn { font-size:12px; padding:6px 14px; }
   @media(max-width:768px) { .pdp-grid { grid-template-columns:1fr; } }
+
+<style>
+.cart-count{background:#4c0b7b;color:#fff;font-size:9px;font-weight:800;padding:1px 5px;border-radius:100px;margin-left:-6px;margin-top:-8px;display:none;min-width:16px;text-align:center;vertical-align:top}
+.add-to-cart-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:linear-gradient(140deg,#3d0963,#4c0b7b,#6B28A8);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;transition:opacity .15s;width:100%}
+.add-to-cart-btn:hover{opacity:.9}
+.view-cart-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 20px;border:2px solid #4c0b7b;color:#4c0b7b;border-radius:12px;font-size:13px;font-weight:700;text-decoration:none;transition:all .15s;width:100%;margin-top:10px}
+.view-cart-link:hover{background:#F2EAFA}
 </style>
 </head>
 <body>
@@ -197,5 +204,6 @@
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<script src="/cart.js"></script>
 </body>
 </html>
