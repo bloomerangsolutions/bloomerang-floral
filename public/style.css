@@ -350,9 +350,26 @@
   /* ─── CONTENT AREA LINKS ─── */
   .pdp-info a, .pdp-desc a, .pdp-care a, .pdp-occasions a,
   .delivery-card a, .banner-content a,
-  .page-hero a, .occasion-hero a,
-  section p a:not(.pdp-info a:hover, .pdp-desc a:hover, .pdp-care a:hover,
-  section p a:not(@media(max-width:768px){.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.pricing-grid-simple{grid-template-columns:1fr}.area-list{columns:1}.footer-grid{grid-template-columns:1fr 1fr}}
+  .page-hero a, .occasion-hero a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft);
+    transition: border-color 0.2s;
+  }
+  .pdp-info a:hover, .pdp-desc a:hover, .pdp-care a:hover, .pdp-occasions a:hover,
+  .delivery-card a:hover, .banner-content a:hover,
+  .page-hero a:hover, .occasion-hero a:hover {
+    border-color: var(--accent);
+  }
+
+  /* Responsive rules that were swallowed by the broken :not() selector */
+  @media(max-width:768px){
+    .about-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .pricing-grid-simple{grid-template-columns:1fr}
+    .area-list{columns:1}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
 
 /* ===== INLINE FORMS ===== */
 .inline-form-section {
@@ -782,7 +799,6 @@ select.form-input { appearance: none; background-image: url("data:image/svg+xml,
   font-size: 12px;
 }
 
-.wedding-pkg 
 
 /* Wedding process */
 .wedding-process {
